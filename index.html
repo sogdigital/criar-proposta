@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./icon.ico" type="ico" />
+    <title>Criar Proposta</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #meuFormulario {
+            background-color: #ffffff;
+            /* Fundo branco */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* Sombra suave */
+            padding: 20px;
+            width: 400px;
+            /* Largura do formulário */
+            margin: auto;
+            /* Centralizar na página */
+            margin-top: 50px;
+            /* Espaçamento superior */
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #meuFormulario label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        #meuFormulario input[type="text"] {
+            width: calc(100% - 20px);
+            /* Largura do input, descontando o padding */
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        #meuFormulario input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #meuFormulario input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+
+        .slide {
+            position: relative;
+            width: 794px;
+            /* largura da imagem */
+            height: 1123px;
+            /* altura da imagem */
+            margin: auto;
+        }
+
+        .imagem {
+            width: 100%;
+            /* garantir que a imagem ocupe todo o espaço */
+            height: 100%;
+            /* garantir que a imagem ocupe todo o espaço */
+            object-fit: cover;
+            /* redimensionar a imagem mantendo a proporção */
+        }
+
+        .slide .texto {
+            position: absolute;
+            top: 10%;
+            /* centralizar verticalmente */
+            left: 30%;
+            /* centralizar horizontalmente */
+            color: rgb(0, 0, 0);
+            font-size: 24px;
+            text-align: justify;
+            padding: auto;
+            line-height: 1;
+            /* Altere o valor conforme necessário para reduzir o espaçamento entre as linhas */
+            width: 500px;
+            /* largura da imagem */
+            height: 1123px;
+            /* altura da imagem */
+
+        }
+
+        .imprimir-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .imprimir-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .slide span {
+            color: red;
+            /* Cor para destacar os dados preenchidos */
+            font-weight: bold;
+        }
+
+        @media print {
+            .imprimir-btn {
+                display: none;
+                /* Oculta o botão durante a impressão */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Div para o slide -->
+    <div class="slide">
+        <div class="slide">
+            <img class="imagem" src="./fundo 1.png" alt="Imagem de Fundo">
+            <div class="texto">
+                <span>PLANEJAMENTO</span> <BR><BR>
+                <span>Objetivo</span><BR>
+                Conversão: CPL (Custo por Lead) e CPA (Custo por Aquisição) visa a geração de leads de qualidade e
+                aquisições de clientes. No CPL, os anunciantes pagam quando obtêm informações de contato de leads
+                interessados, enquanto no CPA, pagam quando um usuário realiza uma ação específica desejada, como uma
+                compra. Os canais XXXXX são usados para segmentar anúncios para target específicos, maximizando a
+                eficiência na obtenção de resultados mensuráveis​<br><br>
+                <span>TARGET</span><BR>
+                    ${tipoTarget} - Segmento: ${tipoSegmento} - Interesses em: ${tipoInteresse}
+                <BR><BR>
+                <span>PRAÇAS</span><BR>
+                    ${tipoPraca} <BR><BR>
+                <span>PRODUTOS/FORMATOS</span><BR>
+                    ${tipoFormato}
+                <BR><BR>
+                <span>PERÍODO</span><BR>
+                    ${tipoPeriodo}
+            </div>
+        </div>
+
+
+        <button class="imprimir-btn" onclick="imprimir()">Salvar Proposta</button>
+        <button class="imprimir-btn" onclick="imprimir()">Salvar Proposta</button>
+
+        <script>
+            function imprimir() {
+                window.print(); // Chama a janela de impressão do navegador
+            }
+        </script>
+
+
+</body>
+
+</html>
