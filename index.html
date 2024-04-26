@@ -8,10 +8,13 @@
 
     <title>Formulário</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: "Bebas Neue", sans-serif;
+            background: linear-gradient(to right, #f64927, #fda561, #f64927);
         }
 
         #meuFormulario {
@@ -31,23 +34,32 @@
 
         h2 {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            color: white;
+            font-size: 35px;
+            text-shadow: 2px 2px rgb(31, 31, 31);
         }
 
         #meuFormulario label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
+            display: inline-block;
+            /* Permite que os rótulos e inputs fiquem lado a lado */
+            width: 150px;
+            /* Define uma largura fixa para os rótulos (ajuste conforme necessário) */
+            margin-right: 10px;
+            /* Adiciona um espaço entre o rótulo e o campo de entrada */
+            font-size: 20px;
         }
 
+
+
         #meuFormulario input[type="text"] {
-            width: calc(100% - 20px);
+            width: calc(50% - 1px);
             /* Largura do input, descontando o padding */
             padding: 10px;
             margin-bottom: 20px;
             border-radius: 5px;
             border: 1px solid #ccc;
-            font-size: 16px;
+            font-size: 14px;
         }
 
         #meuFormulario input[type="button"] {
@@ -58,11 +70,13 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 25px;
+            font-family: "Bebas Neue", sans-serif;
         }
 
         #meuFormulario input[type="button"]:hover {
             background-color: #0056b3;
+            
         }
 
         .slide {
@@ -130,41 +144,64 @@
                 /* Oculta o botão durante a impressão */
             }
         }
+
+        .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo {
+        max-width: 100%;
+        max-height: 100%;
+        margin: 50px;
+    }
+
+    .logo img{
+        width: 250px;
+    }
     </style>
 </head>
 
 <body>
-    <h2>Preencha os campos abaixo para criar uma nova proposta:</h2>
+    <h2>PARA CRIAR UMA NOVA PROPOSTA, <br> PREENCHA OS CAMPOS ABAIXO:</h2>
     <form id="meuFormulario">
-        <label for="tipoCampanha">Tipo de campanha:</label>
+        <label for="tipoCampanha">Tipo de Campanha:</label>
         <input type="text" id="tipoCampanha" name="tipoCampanha"><br><br>
         <label for="tipoCampanha">Cliente:</label>
         <input type="text" id="nomeCliente" name="nomeCliente"><br><br>
-        <label for="tipoCanais">Tipo de Canais:</label>
+        <label for="tipoCanais">Canais:</label>
         <input type="text" id="tipoCanais" name="tipoCanais"><br><br>
 
-        <label for="tipoTarget">Tipo de Target:</label>
+        <label for="tipoTarget">Target:</label>
         <input type="text" id="tipoTarget" name="tipoTarget"><br><br>
 
-        <label for="tipoSegmento">Tipo de Segmento:</label>
+        <label for="tipoSegmento">Segmento:</label>
         <input type="text" id="tipoSegmento" name="tipoSegmento"><br><br>
 
-        <label for="tipoInteresse">Tipo de Interesse:</label>
+        <label for="tipoInteresse">Interesses:</label>
         <input type="text" id="tipoInteresse" name="tipoInteresse"><br><br>
 
-        <label for="tipoPraca">Tipo de Praça:</label>
+        <label for="tipoPraca">Praça:</label>
         <input type="text" id="tipoPraca" name="tipoPraca"><br><br>
 
-        <label for="tipoFormato">Tipo de Formato:</label>
+        <label for="tipoFormato">Formato:</label>
         <input type="text" id="tipoFormato" name="tipoFormato"><br><br>
 
-        <label for="tipoPeriodo">Tipo de Período:</label>
+        <label for="tipoPeriodo">Período:</label>
         <input type="text" id="tipoPeriodo" name="tipoPeriodo"><br><br>
 
         <!-- Adicione mais campos conforme necessário -->
 
         <input type="button" onclick="preencherTexto()" value="Criar Proposta">
     </form>
+
+    <div class="logo-container">
+        <div class="logo">
+            <img src="./white-logo.png" alt="logo-sog-digital">
+        </div>
+    </div>
+    
 
     <script>
         function preencherTexto() {
