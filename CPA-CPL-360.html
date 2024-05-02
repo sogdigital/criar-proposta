@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./icon.ico" type="ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Formulário</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #f64927, #fda561, #f64927);
+        }
+
+        #meuFormulario {
+            background-color: #ffffff;
+            /* Fundo branco */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* Sombra suave */
+            padding: 20px;
+            width: 400px;
+            /* Largura do formulário */
+            margin: auto;
+            /* Centralizar na página */
+            margin-top: 50px;
+            /* Espaçamento superior */
+            font-family: "Bebas Neue", sans-serif;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: rgb(59, 0, 114);
+            text-decoration: underline #FF573C;
+        }
+
+        .instrucoes p{
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: bold;
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 30px;
+            text-shadow: 2px 2px black;
+        }
+
+
+        #meuFormulario label {
+            display: inline-block;
+            /* Permite que os rótulos e inputs fiquem lado a lado */
+            width: 150px;
+            /* Define uma largura fixa para os rótulos (ajuste conforme necessário) */
+            margin-right: 10px;
+            /* Adiciona um espaço entre o rótulo e o campo de entrada */
+            font-size: 20px;
+        }
+
+
+
+        #meuFormulario input[type="text"] {
+            width: calc(50% - 1px);
+            /* Largura do input, descontando o padding */
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        #meuFormulario input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 25px;
+            font-family: "Bebas Neue", sans-serif;
+        }
+
+        #meuFormulario input[type="button"]:hover {
+            background-color: #0056b3;
+
+        }
+
+        .slide {
+            position: relative;
+            width: 794px;
+            /* largura da imagem */
+            height: 1123px;
+            /* altura da imagem */
+            margin: auto;
+        }
+
+        .imagem {
+            width: 100%;
+            /* garantir que a imagem ocupe todo o espaço */
+            height: 100%;
+            /* garantir que a imagem ocupe todo o espaço */
+            object-fit: cover;
+            /* redimensionar a imagem mantendo a proporção */
+            width: 794px;
+            /* largura da imagem */
+            height: 1123px;
+        }
+
+        .slide .texto {
+            position: absolute;
+            top: 10%;
+            /* centralizar verticalmente */
+            left: 30%;
+            /* centralizar horizontalmente */
+            color: rgb(0, 0, 0);
+            font-size: 24px;
+            text-align: justify;
+            padding: auto;
+            line-height: 1;
+            /* Altere o valor conforme necessário para reduzir o espaçamento entre as linhas */
+            width: 500px;
+            /* largura da imagem */
+            height: 1123px;
+            /* altura da imagem */
+
+        }
+
+        h3 {
+            font-size: 10px;
+        }
+
+
+
+        .slide .texto2 {
+            position: absolute;
+            top: 10%;
+            /* centralizar verticalmente */
+            left: 5%;
+            /* centralizar horizontalmente */
+            color: rgb(0, 0, 0);
+            font-size: 24px;
+            text-align: justify;
+            padding: auto;
+            line-height: 1;
+            /* Altere o valor conforme necessário para reduzir o espaçamento entre as linhas */
+            width: 720px;
+            /* largura da imagem */
+            height: 1123px;
+            /* altura da imagem */
+
+        }
+
+        .slide .texto3 {
+            position: absolute;
+            top: 10%;
+            /* centralizar verticalmente */
+            left: 5%;
+            /* centralizar horizontalmente */
+            color: rgb(0, 0, 0);
+            font-size: 22px;
+            text-align: justify;
+            padding: auto;
+            line-height: 1;
+            /* Altere o valor conforme necessário para reduzir o espaçamento entre as linhas */
+            width: 720px;
+            /* largura da imagem */
+            height: 1123px;
+            /* altura da imagem */
+
+        }
+
+        .slide .texto4 {
+            position: absolute;
+            top: 10%;
+            /* centralizar verticalmente */
+            left: 5%;
+            /* centralizar horizontalmente */
+            color: rgb(0, 0, 0);
+            font-size: 22px;
+            text-align: justify;
+            padding: auto;
+            line-height: 1;
+            /* Altere o valor conforme necessário para reduzir o espaçamento entre as linhas */
+            width: 720px;
+            /* largura da imagem */
+            height: 1123px;
+            /* altura da imagem */
+
+        }
+
+        .slide .texto4 h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #FF0058;
+            font-size: 50px;
+            text-decoration: none;
+        }
+
+        .slide .texto4 p {
+            position: absolute;
+            text-align: center;
+            left: 8%;
+            margin-bottom: 20px;
+            color: #FF0058;
+            font-size: 25px;
+            width: 600px;
+
+        }
+
+        .slide .texto2 p {
+            position: absolute;
+            text-align: center;
+            left: 8%;
+            margin-bottom: 20px;
+            color: rgb(59, 0, 114);
+            font-size: 50px;
+            width: 600px;
+            text-align: justify;
+            font-family: "Bebas Neue", sans-serif;
+
+        }
+
+        .imprimir-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .imprimir-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .slide span {
+            color: #FF573C;
+            /* Cor para destacar os dados preenchidos */
+            font-weight: bold;
+        }
+
+        .slide span {
+            color: #FF573C;
+            /* Cor para destacar os dados preenchidos */
+            font-weight: bold;
+        }
+
+        @media print {
+            .imprimir-btn {
+                display: none;
+                /* Oculta o botão durante a impressão */
+            }
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-left: -9px;
+            font-family: "Yanone Kaffeesatz", sans-serif;
+
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            font-size: 11px;
+
+        }
+
+        th {
+            background-color: #FF573C;
+            color: white;
+            font-size: 13px;
+
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            max-width: 100%;
+            max-height: 100%;
+            margin: 50px;
+        }
+
+        .logo img {
+            width: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="instrucoes">
+        <p class="principal">PARA CRIAR UMA NOVA PROPOSTA, <br> PREENCHA OS CAMPOS ABAIXO:</p>
+    </div>
+    
+    <form id="meuFormulario">
+        <label for="tipoCampanha">Tipo de Campanha:</label>
+        <input type="text" id="tipoCampanha" name="tipoCampanha"><br><br>
+        <label for="tipoCampanha">Cliente:</label>
+        <input type="text" id="nomeCliente" name="nomeCliente"><br><br>
+        <label for="tipoCanais">Canais:</label>
+        <input type="text" id="tipoCanais" name="tipoCanais"><br><br>
+
+        <label for="tipoTarget">Target:</label>
+        <input type="text" id="tipoTarget" name="tipoTarget"><br><br>
+
+        <label for="tipoSegmento">Segmento:</label>
+        <input type="text" id="tipoSegmento" name="tipoSegmento"><br><br>
+
+        <label for="tipoInteresse">Interesses:</label>
+        <input type="text" id="tipoInteresse" name="tipoInteresse"><br><br>
+
+        <label for="tipoPraca">Praça:</label>
+        <input type="text" id="tipoPraca" name="tipoPraca"><br><br>
+
+        <label for="tipoPeriodo">Período:</label>
+        <input type="text" id="tipoPeriodo" name="tipoPeriodo"><br><br>
+
+        <label for="tipoFormato">Formato:</label>
+        <input type="text" id="tipoFormato" name="tipoFormato"><br><br>
+
+        <label for="tipoPorcentagem">% Investimento:</label>
+        <input type="text" id="tipoPorcentagem" name="tipoPorcentagem"><br><br>
+
+        <label for="tipoCompra">Tipo de Compra:</label>
+        <input type="text" id="tipoCompra" name="tipoCompra"><br><br>
+
+        <label for="tipoValorUn">Valor Unitário:</label>
+        <input type="text" id="tipoValorUn" name="tipoValorUn"><br><br>
+
+        <label for="tipoOut">OUT:</label>
+        <input type="text" id="tipoOut" name="tipoOut"><br><br>
+
+        <label for="tipoTotalLiq">Total Liquido:</label>
+        <input type="text" id="tipoTotalLiq" name="tipoTotalLiq"><br><br>
+
+        <label for="tipoEst">Estimativa de Res.:</label>
+        <input type="text" id="tipoEst" name="tipoEst"><br><br>
+
+        <label for="nomeResponsavel">Nome Executivo:</label>
+        <input type="text" id="nomeResponsavel" name="nomeResponsavel"><br><br>
+
+        <label for="emailResponsavel">Email Executivo:</label>
+        <input type="text" id="emailResponsavel" name="emailResponsavel"><br><br>
+
+        <label for="telResponsavel">Tel Executivo:</label>
+        <input type="text" id="telResponsavel" name="telResponsavel"><br><br>
+
+
+        <!-- Adicione mais campos conforme necessário -->
+
+        <input type="button" onclick="preencherTexto()" value="Criar Proposta">
+    </form>
+
+    <div class="logo-container">
+        <div class="logo">
+            <img src="./white-logo.png" alt="logo-sog-digital">
+        </div>
+    </div>
+
+
+    <script>
+        function preencherTexto() {
+            // Pegar os valores dos inputs do formulário
+            var tipoCampanha = document.getElementById("tipoCampanha").value;
+            var nomeCliente = document.getElementById("nomeCliente").value;
+            var tipoCanais = document.getElementById("tipoCanais").value;
+            var tipoTarget = document.getElementById("tipoTarget").value;
+            var tipoSegmento = document.getElementById("tipoSegmento").value;
+            var tipoInteresse = document.getElementById("tipoInteresse").value;
+            var tipoPraca = document.getElementById("tipoPraca").value;
+            var tipoFormato = document.getElementById("tipoFormato").value;
+            var tipoPeriodo = document.getElementById("tipoPeriodo").value;
+            var tipoFormato = document.getElementById("tipoFormato").value;
+            var tipoPorcentagem = document.getElementById("tipoPorcentagem").value;
+            var tipoCompra = document.getElementById("tipoCompra").value;
+            var tipoValorUn = document.getElementById("tipoValorUn").value;
+            var tipoOut = document.getElementById("tipoOut").value;
+            var tipoTotalLiq = document.getElementById("tipoTotalLiq").value;
+            var tipoEst = document.getElementById("tipoEst").value;
+            var nomeResponsavel = document.getElementById("nomeResponsavel").value;
+            var emailResponsavel = document.getElementById("emailResponsavel").value;
+            var telResponsavel = document.getElementById("telResponsavel").value;
+
+            // Atualizar o texto com os valores preenchidos
+            var textoAtualizado = `
+            <div class="slide">
+        <img class="imagem" src="./fundo 2.png" alt="Imagem de Fundo">
+    </div>
+    <div class="slide">
+        <img class="imagem" src="./pagina2.png" alt="Imagem de Fundo">
+    </div>
+    <div class="slide">
+        <img class="imagem" src="./pagina3.png" alt="Imagem de Fundo">
+    </div>
+
+
+    <div class="slide">
+        <img class="imagem" src="./fundo 1.png" alt="Imagem de Fundo">
+        <div class="texto">
+            O poder da <span>Mídia Programática</span> na entrega de anúncios em sites e aplicativos está redefinindo a
+            forma como as marcas interagem com seus públicos. Essa abordagem inovadora permite que anunciantes alcancem
+            seus clientes em potencial nos lugares certos, no momento certo e com mensagens altamente relevantes.
+            ​<br><br>
+            As campanhas <span>${tipoCampanha}</span> com a SOG, representam uma abordagem estratégica na publicidade
+            digital onde o <span>${nomeCliente}</span> paga apenas quando os usuários realizam ações específicas, como
+            efetuar uma compra ou preencher um formulário. Esse método altamente preciso de publicidade digital não
+            apenas otimiza o retorno sobre o investimento (ROI), mas também permite uma segmentação precisa do target.​
+            <br><br>
+
+            ​
+
+            A SOG se destaca, não apenas na criação e execução de campanhas <span>${tipoCampanha}</span>, mas também na
+            otimização constante dessas campanhas. Contamos com profissionais especializados em performance que
+            trabalham incansavelmente para garantir que cada campanha alcance seu máximo potencial.​
+        </div>
+    </div>
+
+    <div class="slide">
+        <img class="imagem" src="./fundo 1.png" alt="Imagem de Fundo">
+        <div class="texto">
+            <h2>PLANEJAMENTO</h2> <BR><BR>
+            <span>Objetivo</span><BR>
+            Conversão: CPL (Custo por Lead) e CPA (Custo por Aquisição) visa a geração de leads de qualidade e
+            aquisições de clientes. No CPL, os anunciantes pagam quando obtêm informações de contato de leads
+            interessados, enquanto no CPA, pagam quando um usuário realiza uma ação específica desejada, como uma
+            compra. Os canais <span>${tipoCanais}</span> são usados para segmentar anúncios para target específicos,
+            maximizando a
+            eficiência na obtenção de resultados mensuráveis​<br><br>
+            <span>TARGET</span><BR>
+            ${tipoTarget} - Segmento: ${tipoSegmento} - Interesses em: ${tipoInteresse}
+            <BR><BR>
+            <span>PRAÇAS</span><BR>
+            ${tipoPraca} <BR><BR>
+            <span>PRODUTOS/FORMATOS</span><BR>
+            ${tipoFormato}
+            <BR><BR>
+            <span>PERÍODO</span><BR>
+            ${tipoPeriodo}
+        </div>
+    </div>
+
+    <div class="slide">
+        <img class="imagem" src="./fundo3.png" alt="Imagem de Fundo">
+        <div class="texto2">
+            <h2>PLANO DE MÍDIA</h2> <BR><BR>
+            <SPAN> INVESTIMENTO</SPAN> <BR><BR>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Formato</th>
+                        <th>%</th>
+                        <th>Tipo de Compra</th>
+                        <th>Valor Unitário</th>
+                        <th>OUT</th>
+                        <th>Total Liquido</th>
+                        <th>Estimativa de Resultados</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>${tipoFormato}</td>
+                        <td>${tipoPorcentagem}</td>
+                        <td>${tipoCompra}</td>
+                        <td>${tipoValorUn}</td>
+                        <td>${tipoOut}</td>
+                        <td>${tipoTotalLiq}</td>
+                        <td>${tipoEst}</td>
+                    </tr>
+                    <tr>
+                        <td>${tipoFormato}</td>
+                        <td>${tipoPorcentagem}</td>
+                        <td>${tipoCompra}</td>
+                        <td>${tipoValorUn}</td>
+                        <td>${tipoOut}</td>
+                        <td>${tipoTotalLiq}</td>
+                        <td>${tipoEst}</td>
+                    </tr>
+                    <tr>
+                        <td>${tipoFormato}</td>
+                        <td>${tipoPorcentagem}</td>
+                        <td>${tipoCompra}</td>
+                        <td>${tipoValorUn}</td>
+                        <td>${tipoOut}</td>
+                        <td>${tipoTotalLiq}</td>
+                        <td>${tipoEst}</td>
+                    </tr>
+                </tbody>
+            </table> <br><br>
+            <h3>Proposta válida por 10 dias</h3>
+        </div>
+    </div>
+
+    <div class="slide">
+        <img class="imagem" src="./FUNDOFUNIL.png" alt="Imagem de Fundo">
+        <div class="texto2">
+            <h2>SUGESTÕES DA SOG</h2>
+            <p>Com os produtos da SOG, a <span>${nomeCliente}</span> aprimorará significativamente sua capacidade de
+                gerenciar de forma mais eficaz os leads provenientes das campanhas realizadas.</p> <BR><BR>
+
+        </div>
+    </div>
+
+    <div class="slide">
+        <img class="imagem" src="./fundo4.png" alt="Imagem de Fundo">
+        <div class="texto3">
+            <h2>MARKETING</h2><BR>
+            <span>Campanhas 360 com a SOG</span><BR><BR>
+            A SOG oferece um serviço completo de gerenciamento e otimização de todas as campanhas no âmbito digital para
+            a ${nomeCliente}. Isso inclui análise de dados detalhada, otimizações contínuas, acompanhamento de metas e
+            indicadores de desempenho (KPIs) atingidos, bem como o desenvolvimento e ajuste dos criativos de acordo com
+            os resultados obtidos. Essa parceria proporciona à ${nomeCliente} uma gestão eficiente e estratégica de suas
+            campanhas digitais, visando a maximização dos resultados e o fortalecimento de sua presença
+            online.​​<br><br>
+            <span>Investimento: Budget de acordo com a demanda</span><BR><BR>
+
+            <h2>VENDAS​</h2><BR>
+            <span>Google Tag Manager + Google Analytics + LP com Integração com o CRM​</span><BR><BR>
+                A SOG disponibiliza um Fee Mensal que inclui uma série de serviços essenciais para potencializar a presença online da sua empresa. Esse pacote abrange Landing Pages (LP) de alta qualidade, integração com o Google Tag Manager e o Google Analytics, além de uma conexão direta com o seu sistema de Customer Relationship Management (CRM). Com essa solução completa, você terá uma visão abrangente dos leads e integrada das atividades online, permitindo uma gestão eficaz e orientada por dados para alcançar seus objetivos de negócios de maneira mais eficiente e estratég​​<br><br>
+            <span>Fee Mensal – R$ 18.990,00 por R$ 13.990,00</span><BR><BR>
+        </div>
+    </div>
+    <div class="slide">
+        <img class="imagem" src="./pagina4.png" alt="Imagem de Fundo">
+    </div>
+    <div class="slide">
+        <img class="imagem" src="./fundo3.png" alt="Imagem de Fundo">
+        <div class="texto4">
+            <h2>MUITO OBRIGADO!</h2>
+            <p>Nos vemos em breve!</p> <BR><BR>
+
+                <div class="logo-container">
+                    <div class="logo">
+                        <img src="./logo.png" alt="logo-sog-digital">
+                    </div>
+                </div>
+
+                <p>${nomeResponsavel}</p> <BR><BR>
+                    <p>${telResponsavel}</p> <BR><BR>
+                        <p>${emailResponsavel}</p> <BR><BR>
+
+        </div>
+    </div>
+
+
+        <button class="imprimir-btn" onclick="imprimir()">Salvar Proposta</button>
+      `;
+
+            // Atualizar o conteúdo da página com o texto atualizado
+            document.body.innerHTML = textoAtualizado;
+        }
+    </script>
+    <script>
+        function imprimir() {
+            window.print(); // Chama a janela de impressão do navegador
+        }
+    </script>
+</body>
+
+</html>
