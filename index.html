@@ -13,10 +13,24 @@
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 body {
+    height: 100%;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #f64927, #fda561, #f64927);
+    background-image: url('./section1.png');
+    background-size:cover;
+    background-position: center;
+}
+
+@media screen and (max-width: 1020px) {
+
+    body {
+    background-image: url('./section1.png');
+    background-size: 1900px;
+    background-position: center;
+}
+
+
 }
 
 
@@ -88,6 +102,22 @@ a:hover {
     background-color: #2980b9;
 }
 
+.logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            max-width: 100%;
+            max-height: 100%;
+            margin: 50px;
+        }
+
+        .logo img {
+            width: 250px;
+        }
+
 
     </style>
 </head>
@@ -103,17 +133,23 @@ a:hover {
             <div class="campaign-list">
                 <ul>
                     <li><span>Performance_CPL_CPA_360 + FEE + Programática</span><a href="./CPA-CPL-360.html">ACESSAR</a></li>
-                    <li><span>Awareness_CPM_360 + FEE + Programática</span><a href="caminho_para_campanha2.html">ACESSAR</a></li>
-                    <li><span>Awareness_CPM_Programática</span><a href="caminho_para_campanha3.html">ACESSAR</a></li>
-                    <li><span>Dooh</span><a href="caminho_para_campanha4.html">ACESSAR</a></li>
-                    <li><span>Funil_Search_Meta_Programática</span><a href="caminho_para_campanha5.html">ACESSAR</a></li>
-                    <li><span>Tráfego_CPC_360 + FEE + Programática</span><a href="caminho_para_campanha6.html">ACESSAR</a></li>
-                    <li><span>Tráfego_CPC_Programática</span><a href="caminho_para_campanha7.html">ACESSAR</a></li>
-                    <li><span>Awareness_LinkedIn</span><a href="caminho_para_campanha8.html">ACESSAR</a></li>
+                    <li><span>Awareness_CPM_360 + FEE + Programática</span><a href="./Awarness-CPM-360.html">ACESSAR</a></li>
+                    <li><span>Awareness_CPM_Programática</span><a href="./Awarness-CPM-360-Programatica.html">ACESSAR</a></li>
+                    <li><span>Dooh</span><a href="./DOOH.html">ACESSAR</a></li>
+                    <li><span>Funil_Search_Meta_Programática</span><a href="./Funil-Search-Meta.html">ACESSAR</a></li>
+                    <li><span>Tráfego_CPC_360 + FEE + Programática</span><a href="./Trafego-CPC_360.html">ACESSAR</a></li>
+                    <li><span>Tráfego_CPC_Programática</span><a href="./Trafego-CPC-Programatica.html">ACESSAR</a></li>
+                    <li><span>Awareness_LinkedIn</span><a href="./Awarness-Linkedin.html">ACESSAR</a></li>
                 </ul>
             </div>
+        </div>
+    </div>
 
-
+    <div class="logo-container">
+        <div class="logo">
+            <img src="./white-logo.png" alt="logo-sog-digital">
+        </div>
+    </div>
 
 
 </body>
