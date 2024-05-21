@@ -40,7 +40,7 @@
             text-decoration: underline #FF573C;
         }
 
-        .instrucoes p{
+        .instrucoes p {
             text-align: center;
             margin-bottom: 20px;
             color: white;
@@ -309,9 +309,10 @@
 
 <body>
     <div class="instrucoes">
-        <p class="principal">PARA CRIAR UMA NOVA PROPOSTA <br>Awareness_CPM_Programática<br> PREENCHA OS CAMPOS ABAIXO:</p>
+        <p class="principal">PARA CRIAR UMA NOVA PROPOSTA <br>Awareness_CPM_Programática<br> PREENCHA OS CAMPOS ABAIXO:
+        </p>
     </div>
-    
+
     <form id="meuFormulario">
         <label for="tipoCampanha">Tipo de Campanha:</label>
         <input type="text" id="tipoCampanha" name="tipoCampanha"><br><br>
@@ -332,29 +333,16 @@
         <label for="tipoPraca">Praça:</label>
         <input type="text" id="tipoPraca" name="tipoPraca"><br><br>
 
+        <label for="imageUpload">Upload de Imagem:</label>
+        <input type="file" id="imageUpload" accept="image/*" onchange="loadImage(event)">
+        <br>
+        <input type="submit" value="Submit" onclick="preencherTexto(); return false;">
+        <img id="previewImage" alt="Preview da Imagem" style="max-width: 200px; max-height: 200px;"><br><br>
+
         <label for="tipoPeriodo">Período:</label>
         <input type="text" id="tipoPeriodo" name="tipoPeriodo"><br><br>
 
-        <label for="tipoFormato">Formato:</label>
-        <input type="text" id="tipoFormato" name="tipoFormato"><br><br>
-
-        <label for="tipoPorcentagem">% Investimento:</label>
-        <input type="text" id="tipoPorcentagem" name="tipoPorcentagem"><br><br>
-
-        <label for="tipoCompra">Tipo de Compra:</label>
-        <input type="text" id="tipoCompra" name="tipoCompra"><br><br>
-
-        <label for="tipoValorUn">Valor Unitário:</label>
-        <input type="text" id="tipoValorUn" name="tipoValorUn"><br><br>
-
-        <label for="tipoOut">OUT:</label>
-        <input type="text" id="tipoOut" name="tipoOut"><br><br>
-
-        <label for="tipoTotalLiq">Total Liquido:</label>
-        <input type="text" id="tipoTotalLiq" name="tipoTotalLiq"><br><br>
-
-        <label for="tipoEst">Estimativa de Res.:</label>
-        <input type="text" id="tipoEst" name="tipoEst"><br><br>
+        <!-- Caixa de seleção para o tipo de campanha -->
 
         <label for="nomeResponsavel">Nome Executivo:</label>
         <input type="text" id="nomeResponsavel" name="nomeResponsavel"><br><br>
@@ -377,8 +365,35 @@
         </div>
     </div>
 
+    <script>
+        let uploadedImage = '';
+
+        function loadImage(event) {
+            const reader = new FileReader();
+            reader.onload = function () {
+                uploadedImage = reader.result;
+                const previewImage = document.getElementById('previewImage');
+                if (previewImage) {
+                    previewImage.src = uploadedImage;
+                }
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+        function preencherTexto() {
+            
+
+            const finalImage = document.getElementById('finalImage');
+            if (finalImage && uploadedImage) {
+                finalImage.src = uploadedImage;
+            } else {
+                console.error("Erro ao preencher o texto: finalImage ou uploadedImage não está definido.");
+            }
+        }
+    </script>
 
     <script>
+
         function preencherTexto() {
             // Pegar os valores dos inputs do formulário
             var tipoCampanha = document.getElementById("tipoCampanha").value;
@@ -388,21 +403,16 @@
             var tipoSegmento = document.getElementById("tipoSegmento").value;
             var tipoInteresse = document.getElementById("tipoInteresse").value;
             var tipoPraca = document.getElementById("tipoPraca").value;
-            var tipoFormato = document.getElementById("tipoFormato").value;
             var tipoPeriodo = document.getElementById("tipoPeriodo").value;
-            var tipoFormato = document.getElementById("tipoFormato").value;
-            var tipoPorcentagem = document.getElementById("tipoPorcentagem").value;
-            var tipoCompra = document.getElementById("tipoCompra").value;
-            var tipoValorUn = document.getElementById("tipoValorUn").value;
-            var tipoOut = document.getElementById("tipoOut").value;
-            var tipoTotalLiq = document.getElementById("tipoTotalLiq").value;
-            var tipoEst = document.getElementById("tipoEst").value;
             var nomeResponsavel = document.getElementById("nomeResponsavel").value;
             var emailResponsavel = document.getElementById("emailResponsavel").value;
             var telResponsavel = document.getElementById("telResponsavel").value;
+            var uploadedImage = document.getElementById('previewImage');
+            var imagemHTML = uploadedImage ? `<img id="finalImage" src="${uploadedImage.src}" alt="Imagem Final" style="max-width: 700px; max-height: 183px;">` : '';
 
             // Atualizar o texto com os valores preenchidos
             var textoAtualizado = `
+            
             <div class="slide">
         <img class="imagem" src="./fundo 2.png" alt="Imagem de Fundo">
     </div>
@@ -421,21 +431,21 @@
             forma como as marcas interagem com seus públicos. Essa abordagem inovadora permite que anunciantes alcancem
             seus clientes em potencial nos lugares certos, no momento certo e com mensagens altamente relevantes.
             ​<br><br>
-            A ${tipoCliente} pode colher inúmeros benefícios ao realizar uma campanha de conscientização (awareness)
+            A ${nomeCliente} pode colher inúmeros benefícios ao realizar uma campanha de conscientização (awareness)
             programática para o público ${tipoTarget} em parceria com a SOG. ​
 
             ​
 
-            Essa colaboração permitirá à ${tipoCliente} alcançar seu target de maneira altamente direcionada e eficaz,
+            Essa colaboração permitirá à ${nomeCliente} alcançar seu target de maneira altamente direcionada e eficaz,
             maximizando a visibilidade da marca e seus produtos ou serviços entre empresas e profissionais. Além disso,
             a SOG traz sua expertise em otimizações, garantindo que a campanha seja entregue com qualidade para o maior
             número de usuários no segmento de ${tipoSegmento}. ​
 
             ​
 
-            Isso não apenas fortalecerá a presença da ${tipoCliente} no mercado ${tipoCanais}, mas também resultará em um maior
+            Isso não apenas fortalecerá a presença da ${nomeCliente} no mercado ${tipoCanais}, mas também resultará em um maior
             número de leads qualificados com interesse em comprar produtos da marca. Em última análise, essa campanha
-            estratégica proporcionará à ${tipoCliente} maior reconhecimento de marca, impulsionando o crescimento e o sucesso
+            estratégica proporcionará à ${nomeCliente} maior reconhecimento de marca, impulsionando o crescimento e o sucesso
             em seu setor de atuação.
             <br><br>
 
@@ -447,7 +457,7 @@
         <img class="imagem" src="./fundo 1.png" alt="Imagem de Fundo">
         <div class="texto">
             <h2>PLANEJAMENTO</h2> <BR><BR>
-            <span>${tipoCliente}</span><BR><BR>
+            <span>${nomeCliente}</span><BR><BR>
             <span>Objetivo</span><BR>
                 Awareness ou conscientização: Estratégia de marketing que visa aumentar o conhecimento e a visibilidade de uma marca, produto ou causa entre o público-alvo. Ela é fundamental para criar reconhecimento e despertar o interesse das pessoas, estabelecendo uma base sólida para futuras ações de marketing.​
 
@@ -458,7 +468,7 @@
             <span>PRAÇAS</span><BR>
             ${tipoPraca} <BR><BR>
             <span>PRODUTOS/FORMATOS</span><BR>
-            ${tipoFormato}
+            ${tipoCampanha}
             <BR><BR>
             <span>PERÍODO</span><BR>
             ${tipoPeriodo}
@@ -470,48 +480,11 @@
         <div class="texto2">
             <h2>PLANO DE MÍDIA</h2> <BR><BR>
             <SPAN> INVESTIMENTO</SPAN> <BR><BR>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Formato</th>
-                        <th>%</th>
-                        <th>Tipo de Compra</th>
-                        <th>Valor Unitário</th>
-                        <th>OUT</th>
-                        <th>Total Liquido</th>
-                        <th>Estimativa de Resultados</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>${tipoFormato}</td>
-                        <td>${tipoPorcentagem}</td>
-                        <td>${tipoCompra}</td>
-                        <td>${tipoValorUn}</td>
-                        <td>${tipoOut}</td>
-                        <td>${tipoTotalLiq}</td>
-                        <td>${tipoEst}</td>
-                    </tr>
-                    <tr>
-                        <td>${tipoFormato}</td>
-                        <td>${tipoPorcentagem}</td>
-                        <td>${tipoCompra}</td>
-                        <td>${tipoValorUn}</td>
-                        <td>${tipoOut}</td>
-                        <td>${tipoTotalLiq}</td>
-                        <td>${tipoEst}</td>
-                    </tr>
-                    <tr>
-                        <td>${tipoFormato}</td>
-                        <td>${tipoPorcentagem}</td>
-                        <td>${tipoCompra}</td>
-                        <td>${tipoValorUn}</td>
-                        <td>${tipoOut}</td>
-                        <td>${tipoTotalLiq}</td>
-                        <td>${tipoEst}</td>
-                    </tr>
-                </tbody>
-            </table> <br><br>
+            
+<div id="finalDocument" style="width: 723px; height: 183px;">
+    <!-- Seus outros elementos preenchidos -->
+    ${imagemHTML}
+</div>
             <h3>Proposta válida por 10 dias</h3>
         </div>
     </div>
@@ -572,9 +545,10 @@
         </div>
     </div>
 
-
         <button class="imprimir-btn" onclick="imprimir()">Salvar Proposta</button>
       `;
+
+
 
             // Atualizar o conteúdo da página com o texto atualizado
             document.body.innerHTML = textoAtualizado;
